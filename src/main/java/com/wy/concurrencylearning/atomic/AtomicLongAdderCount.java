@@ -1,6 +1,5 @@
 package com.wy.concurrencylearning.atomic;
 
-import jdk.nashorn.internal.runtime.logging.Logger;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.concurrent.CountDownLatch;
@@ -14,7 +13,6 @@ import java.util.concurrent.atomic.LongAdder;
  *
  */
 @Slf4j
-@Logger
 public class AtomicLongAdderCount {
     // 请求总数
     public static final int clientTotal = 5000;
