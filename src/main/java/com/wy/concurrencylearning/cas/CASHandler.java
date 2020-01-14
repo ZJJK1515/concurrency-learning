@@ -10,7 +10,7 @@ public class CASHandler {
     /**
      * 模拟内存变量
      */
-    private volatile Integer nativeCount = 0;
+    private Integer nativeCount = 0;
 
     /**
      * CAS 方法，使用 synchronized 模拟比较、获取、修改内存值的操作
@@ -74,7 +74,7 @@ public class CASHandler {
         ExecutorService executor = Executors.newScheduledThreadPool(1000);
         final CountDownLatch countDownLatch = new CountDownLatch(5000);
 
-        // 模拟并发量 100
+        // 模拟并发量 500
         Semaphore semaphore = new Semaphore(500);
 
         CASHandler casHandler = new CASHandler();
