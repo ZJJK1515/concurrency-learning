@@ -5,7 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import java.util.concurrent.*;
 
 @Slf4j
-public class CASDemo {
+public class CASHandler {
 
     /**
      * 模拟内存变量
@@ -77,12 +77,12 @@ public class CASDemo {
         // 模拟并发量 100
         Semaphore semaphore = new Semaphore(100);
 
-        CASDemo casDemo = new CASDemo();
+        CASHandler casHandler = new CASHandler();
             for (int i = 0; i < 5000; i++) {
                 executor.execute(() -> {
                     try {
                         semaphore.acquire();
-                        casDemo.increment();
+                        casHandler.increment();
                         semaphore.release();
                         countDownLatch.countDown();
                     } catch (InterruptedException e) {
@@ -96,7 +96,7 @@ public class CASDemo {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        log.info("over, " + casDemo.getInteger());
+        log.info("over, " + casHandler.getInteger());
         log.info("countdownlatch: {}", countDownLatch.getCount());
         executor.shutdown();
 
