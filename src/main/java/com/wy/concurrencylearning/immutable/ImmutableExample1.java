@@ -8,7 +8,7 @@ import com.wy.concurrencylearning.annotation.NotThreadSafe;
 import java.util.Map;
 
 @NotThreadSafe
-public class ImmutableExample {
+public class ImmutableExample1 {
 
     private final static Integer a = 1;
     private final static String b = "2";
